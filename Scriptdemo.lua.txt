@@ -1,0 +1,72 @@
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V2/refs/heads/main/UiREDzV2.lua")))()
+
+local gui = Instance.new("ScreenGui", game.CoreGui)
+local frame = Instance.new("Frame", gui)
+frame.Size = UDim2.new(0,280,0,260)
+frame.Position = UDim2.new(0.3,0,0.3,0)
+frame.BackgroundColor3 = Color3.fromRGB(20,20,20)
+frame.Active = true
+frame.Draggable = true
+local title = Instance.new("TextLabel", frame)
+title.Size = UDim2.new(1,0,0.15,0)
+title.Text = "TIỆM NET AUTO PRO+ 🇻🇳"
+title.TextColor3 = Color3.fromRGB(255,255,255)
+title.BackgroundTransparency = 1
+-- Tạo nút
+local function createBtn(text, y)
+local btn = Instance.new("TextButton", frame)
+btn.Size = UDim2.new(0.8,0,0.12,0)
+btn.Position = UDim2.new(0.1,0,y,0)
+btn.Text = text
+btn.BackgroundColor3 = Color3.fromRGB(50,50,50)
+btn.TextColor3 = Color3.fromRGB(255,255,255)
+return btn
+end
+local payBtn = createBtn("Auto Thanh Toán: TẮT", 0.18)
+local fixBtn = createBtn("Auto Sửa Máy: TẮT", 0.33)
+local smellBtn = createBtn("Auto Xịt Thơm: TẮT", 0.48)
+local afkBtn = createBtn("Chống AFK: BẬT", 0.63)
+local closeBtn = createBtn("Đóng Menu", 0.8)
+-- trạng thái
+local autoPay = false
+local autoFix = false
+local autoSmell = false
+local antiAFK = true
+-- toggle
+payBtn.MouseButton1Click:Connect(function()
+autoPay = not autoPay
+payBtn.Text = autoPay and "Auto Thanh Toán: BẬT" or "TẮT"
+end)
+fixBtn.MouseButton1Click:Connect(function()
+autoFix = not autoFix
+fixBtn.Text = autoFix and "Auto Sửa Máy: BẬT" or "TẮT"
+end)
+smellBtn.MouseButton1Click:Connect(function()
+autoSmell = not autoSmell
+smellBtn.Text = autoSmell and "Auto Xịt Thơm: BẬT" or "TẮT"
+end)
+afkBtn.MouseButton1Click:Connect(function()
+antiAFK = not antiAFK
+afkBtn.Text = antiAFK and "Chống AFK: BẬT" or "TẮT"
+end)
+closeBtn.MouseButton1Click:Connect(function()
+gui:Destroy()
+end)
+-- Auto hành động (giả lập click)
+spawn(function()
+while true do
+wait(0.5)
+if autoPay or autoFix or autoSmell then
+game:GetService("VirtualUser"):Button1Down(Vector2.new(0,0))
+game:GetService("VirtualUser"):Button1Up(Vector2.new(0,0))
+end
+end
+end)
+-- Anti AFK
+spawn(function()
+local vu = game:GetService("VirtualUser")
+game.Players.LocalPlayer.Idled:Connect(fun
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))(Settings)
+  end
+  })
